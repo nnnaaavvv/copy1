@@ -5,9 +5,15 @@ def get_instance(module, name, config, *args):
     return getattr(module, config[name]['type'])(*args, **config[name]['args'])
 
 
-def ensure_dir(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
+def ensure_dir(paths):
+    if isinstance(paths, list):
+        for path in paths:
+            if not os.path.exists(path):
+                os.makedirs(path)
+    else:
+        if not os.path.exists(paths):
+            os.makedirs(paths)
+
 
 
 def unique(L):
