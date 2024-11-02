@@ -75,15 +75,15 @@ def query_fn(wsi_id, path_list):
     
 
 def wsi2patches_main(config, start_idx, end_idx, ncores):
-    wsi_root = config['WSIs']['root_path']
-    nuclei_seg_root = config['Nuclei_segs']['root_path']
-    tumor_preds_root = config['Tumor_preds']['root_path']
-    til_preds_root = config['TIL_preds']['root_path']
+    wsi_root = config['tile_process']['WSIs']['root_path']
+    nuclei_seg_root = config['tile_process']['Nuclei_segs']['root_path']
+    tumor_preds_root = config['tile_process']['Tumor_preds']['root_path']
+    til_preds_root = config['tile_process']['TIL_preds']['root_path']
 
-    wsi_output_path = config['WSIs']['output_path']
-    # nuclei_segs_output_path = config['Nuclei_segs']['output_path']
-    # tumor_preds_output_path = config['Tumor_preds']['output_path']
-    # til_preds_output_path = config['TIL_preds']['output_path']
+    wsi_output_path = config['tile_process']['WSIs']['output_path']
+    nuclei_segs_output_path = config['tile_process']['Nuclei_segs']['output_path']
+    tumor_preds_output_path = config['tile_process']['Tumor_preds']['output_path']
+    til_preds_output_path = config['tile_process']['TIL_preds']['output_path']
     
     wsi_path_list = glob('{}/*.svs'.format(wsi_root))
     nuclei_segs_path_list = glob('{}/*.svs'.format(nuclei_seg_root))
@@ -153,11 +153,13 @@ if __name__ == '__main__':
     end_idx = int(args.end_idx)
     ncores = int(args.ncores)
     
-    ensure_dir(config['WSIs']['output_path'])
-    ensure_dir(config['Nuclei_segs']['output_path'])
-    ensure_dir(config['Tumor_preds']['output_path'])
-    ensure_dir(config['TIL_preds']['output_path'])
+    ensure_dir(config['tile_process']['WSIs']['output_path'])
+    ensure_dir(config['tile_process']['Nuclei_segs']['output_path'])
+    ensure_dir(config['tile_process']['Tumor_preds']['output_path'])
+    ensure_dir(config['tile_process']['TIL_preds']['output_path'])
 
     wsi2patches_main(config, start_idx, end_idx, ncores)
+
+    
 
     
