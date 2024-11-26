@@ -2,30 +2,24 @@
     "tile_process": {
         "tile_size": [4000, 4000],
         "WSIs": {
-            "root_path": "/data03/tcga_data/tumor/brca",
-            "output_path": "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/WSIs_patches"
+            "root_path": "/content/drive/MyDrive/DATASET/manifest-25vRPwyh8987165612391086998/TCGA-BRCA",
+            "output_path": "/content/drive/MyDrive/DATASET/WSIdata"
         },
         "Nuclei_segs": {
-            "root_path": "/data02/shared/tcga_analysis/brca_analysis/brca_prob",
-            "output_path": "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/brca_prob"
+            "root_path": "/content/drive/MyDrive/DATASET/manifest-25vRPwyh8987165612391086998/TCGA-BRCAb",
+            "output_path": "/content/drive/MyDrive/DATASET/Nuclei_segsdata"
         },
         "Tumor_preds": {
-            "root_path": "/data01/shared/hanle/tumor_project/pub_tumor_cancer_brca/Cancer_heatmap_tcga_seer_v1",
-            "output_path": [
-                "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/tumor_preds_02",
-                "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/tumor_preds_04",
-                "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/tumor_preds_07"
-            ]
-        },
+            "root_path": "/content/drive/MyDrive/DATASET/manifest-25vRPwyh8987165612391086998/TCGA-BRCA",
+            "output_path": "/content/drive/MyDrive/DATASET/Tumor_predsdata"
+    
+            },
         "TIL_preds": {
-            "root_path": "/data04/shared/shahira/TIL_heatmaps/BRCA/vgg_mix_prob/heatmap_txt",
-            "output_path": [
-                "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/til_preds_02",
-                "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/til_preds_04",
-                "/gpfs/scratch/huidliu/disk/huidong/BMI_projects/data/brca_data/til_preds_07"
-            ]
+            "root_path": "/content/drive/MyDrive/DATASET/manifest-25vRPwyh8987165612391086998/TCGA-BRCA",
+            "output_path": "/content/drive/MyDrive/DATASET/TIL_predsdata"
+            
         },
-        "label_file": "/scratch/KurcGroup/huidong/BMI_projects/clinic_prediction_dls/datasets/dataset_for_survival.csv"
+        "label_file": "/content/drive/MyDrive/DATASET/manifest-25vRPwyh8987165612391086998/metadata.csv"
     },
     
     "dataset": {
@@ -56,4 +50,3 @@
         "valid_freq": 10
     }
 }
-
